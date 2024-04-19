@@ -35,9 +35,6 @@ export class customPageView extends Component {
     @property({ type: ScrollView })
     scrollView: ScrollView | null = null;
 
-    // @property({type:Node})
-    // rowParent: Node = null;
-
     @property({ type: Prefab })
     rowPrefab: Prefab = null;
 
@@ -58,10 +55,10 @@ export class customPageView extends Component {
         generate = false;
         for (let i = 0; i < 15; i++) {
             const row = instantiate(this.rowPrefab);
-            row.getComponent(getCardComponent).getImage();
-            row.getComponent(getCardComponent).getData("name", this.dataArray[i][0].toString());
-
-            row.getComponent(getCardComponent).getData("score", this.dataArray[i][2].toString());
+            row.getComponent(getCardComponent).generateData(
+                this.dataArray[i][0].toString(),
+                this.dataArray[i][1].toString()
+            );
 
             console.log(i, row);
             this.scrollView.content.addChild(row);

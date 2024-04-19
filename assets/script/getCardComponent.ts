@@ -3,6 +3,7 @@ import {
     Component,
     instantiate,
     Label,
+    Mask,
     Node,
     Prefab,
     randomRange,
@@ -17,19 +18,25 @@ export class getCardComponent extends Component {
     @property({ type: [SpriteFrame] })
     personArray: [SpriteFrame] | [] = [];
 
+    @property({ type: Sprite })
+    imageSprite: Sprite = null;
+
+    @property({ type: Label })
+    namelabel: Label = null;
+
+    @property({ type: Label })
+    score: Label = null;
+
     @property({ type: Prefab })
     starPrefab: Prefab;
     start() {}
 
     update(deltaTime: number) {}
 
-    getImage() {
-        this.node.getChildByName("dataNode").getChildByName("image").getComponent(Sprite).spriteFrame =
-            this.personArray[randomRangeInt(0, this.personArray.length)];
-    }
-
-    getData(child: string, data: string) {
-        this.node.getChildByName("dataNode").getChildByName(child).getComponent(Label).string = data;
+    generateData(name: string, score: string) {
+        this.imageSprite.spriteFrame = this.personArray[randomRangeInt(0, this.personArray.length)];
+        this.namelabel.string = name;
+        this.score.string = score;
     }
 
     generateStars(stars: number) {
