@@ -40,8 +40,8 @@ export class customPageView extends Component {
     @property({ type: Prefab })
     rowPrefab: Prefab = null;
 
-    @property({ type: Prefab })
-    starPrefab: Prefab = null;
+    // @property({ type: Prefab })
+    // starPrefab: Prefab = null;
 
     generate = true;
 
@@ -57,21 +57,21 @@ export class customPageView extends Component {
         generate = false;
         for (let i = 0; i < 15; i++) {
             const row = instantiate(this.rowPrefab);
-            row
-                .getChildByName("dataNode")
-                .getChildByName("nameAndScore")
-                .getChildByName("nameLabel")
-                .getComponent(Label).string = "Name: " + this.dataArray[i][0].toString();
-            row
-                .getChildByName("dataNode")
-                .getChildByName("nameAndScore")
-                .getChildByName("scoreLabel")
-                .getComponent(Label).string = "Score: " + this.dataArray[i][1].toString();
-            row
-                .getChildByName("dataNode")
-                .getChildByName("Rank")
-                .getChildByName("rankLabel")
-                .getComponent(Label).string = "Rank: " + this.dataArray[i][2].toString();
+            // row
+            //     .getChildByName("dataNode")
+            //     .getChildByName("nameAndScore")
+            //     .getChildByName("nameLabel")
+            //     .getComponent(Label).string = "Name: " + this.dataArray[i][0].toString();
+            // row
+            //     .getChildByName("dataNode")
+            //     .getChildByName("nameAndScore")
+            //     .getChildByName("scoreLabel")
+            //     .getComponent(Label).string = "Score: " + this.dataArray[i][1].toString();
+            // row
+            //     .getChildByName("dataNode")
+            //     .getChildByName("Rank")
+            //     .getChildByName("rankLabel")
+            //     .getComponent(Label).string = "Rank: " + this.dataArray[i][2].toString();
 
             console.log(i, row);
             this.scrollView.content.addChild(row);
