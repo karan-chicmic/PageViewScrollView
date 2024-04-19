@@ -1364,6 +1364,7 @@
       "__uuid__": "50a10166-ecfc-44bf-8004-1adcc57e2e2b",
       "__expectedType__": "cc.Prefab"
     },
+    "starPrefab": null,
     "_id": "favIuXSZZCVJaVmDeFfjdt"
   },
   {
@@ -1451,6 +1452,7 @@
       "__uuid__": "e55a67f3-bb28-4dd0-b3f5-d220396e0bab",
       "__expectedType__": "cc.Prefab"
     },
+    "starPrefab": null,
     "_id": "a1oE6/V2JC8pnS3PWCSQVZ"
   },
   {

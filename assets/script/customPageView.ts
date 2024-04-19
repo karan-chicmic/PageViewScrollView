@@ -40,7 +40,21 @@ export class customPageView extends Component {
     @property({ type: Prefab })
     rowPrefab: Prefab = null;
 
+    @property({ type: Prefab })
+    starPrefab: Prefab = null;
+
+    generate = true;
+
     protected onLoad(): void {
+        this.generateData(this.generate);
+    }
+
+    onClick() {
+        this.generate = true;
+        this.generateData(this.generate);
+    }
+    generateData(generate: boolean) {
+        generate = false;
         for (let i = 0; i < 15; i++) {
             const row = instantiate(this.rowPrefab);
             row
