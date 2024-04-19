@@ -18,8 +18,8 @@ export class getCardComponent extends Component {
     @property({ type: [SpriteFrame] })
     personArray: [SpriteFrame] | [] = [];
 
-    @property({ type: Sprite })
-    imageSprite: Sprite = null;
+    @property({ type: Node })
+    imageSprite: Node = null;
 
     @property({ type: Label })
     namelabel: Label = null;
@@ -34,11 +34,11 @@ export class getCardComponent extends Component {
     update(deltaTime: number) {}
 
     generateData(name: string, score: string) {
-        const mask = this.imageSprite.getComponent(Mask);
-        mask.type = Mask.Type.SPRITE_STENCIL;
-        const sprite = mask.getComponent(Sprite);
-        sprite.spriteFrame = this.personArray[randomRangeInt(0, this.personArray.length)];
-        mask.alphaThreshold = 0.1;
+        this.imageSprite.getComponent(Sprite).spriteFrame =
+            this.personArray[randomRangeInt(0, this.personArray.length)];
+        this.namelabel.string = name;
+        this.score.string = score;
+        console.log("sprite Frame", this.imageSprite.getComponent(Sprite).spriteFrame);
     }
 
     generateStars(stars: number) {

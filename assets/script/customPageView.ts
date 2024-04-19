@@ -60,7 +60,6 @@ export class customPageView extends Component {
                 this.dataArray[i][1].toString()
             );
 
-            console.log(i, row);
             this.scrollView.content.addChild(row);
         }
     }

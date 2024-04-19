@@ -225,7 +225,7 @@
     "__prefab": {
       "__id__": 7
     },
-    "_type": 0,
+    "_type": 3,
     "_inverted": false,
     "_segments": 64,
     "_alphaThreshold": 0.1,
@@ -236,7 +236,7 @@
     "fileId": "f5cR9wGuZLDYTFeNcoLRCb"
   },
   {
-    "__type__": "cc.Graphics",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -257,29 +257,25 @@
       "b": 255,
       "a": 255
     },
-    "_lineWidth": 1,
-    "_strokeColor": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
+    "_spriteFrame": null,
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 2,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
     },
-    "_lineJoin": 2,
-    "_lineCap": 0,
-    "_fillColor": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 0
-    },
-    "_miterLimit": 10,
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "75HnXFtwdLxZ6xLvbEz0Mk"
+    "fileId": "fb1B4CRvtLELzgv5BrRei6"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1186,7 +1182,9 @@
         "__expectedType__": "cc.SpriteFrame"
       }
     ],
-    "imageSprite": null,
+    "imageSprite": {
+      "__id__": 3
+    },
     "namelabel": {
       "__id__": 14
     },
