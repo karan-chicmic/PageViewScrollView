@@ -16,7 +16,6 @@ export class customPageView extends Component {
         this.scrollView.node.on("scroll-to-top", this.callback, this);
         for (let i = 0; i < 50; i++) {
             const row = instantiate(this.rowPrefab);
-
             this.scrollView.content.addChild(row);
             console.log(this.scrollView.content.position);
         }
