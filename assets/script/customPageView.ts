@@ -43,12 +43,21 @@ export class customPageView extends Component {
     protected onLoad(): void {
         for (let i = 0; i < 15; i++) {
             const row = instantiate(this.rowPrefab);
-            row.getChildByName("nameAndScore").getChildByName("nameLabel").getComponent(Label).string =
-                "Name: " + this.dataArray[i][0].toString();
-            row.getChildByName("nameAndScore").getChildByName("scoreLabel").getComponent(Label).string =
-                "Score: " + this.dataArray[i][1].toString();
-            row.getChildByName("Rank").getChildByName("rankLabel").getComponent(Label).string =
-                "Rank: " + this.dataArray[i][2].toString();
+            row
+                .getChildByName("dataNode")
+                .getChildByName("nameAndScore")
+                .getChildByName("nameLabel")
+                .getComponent(Label).string = "Name: " + this.dataArray[i][0].toString();
+            row
+                .getChildByName("dataNode")
+                .getChildByName("nameAndScore")
+                .getChildByName("scoreLabel")
+                .getComponent(Label).string = "Score: " + this.dataArray[i][1].toString();
+            row
+                .getChildByName("dataNode")
+                .getChildByName("Rank")
+                .getChildByName("rankLabel")
+                .getComponent(Label).string = "Rank: " + this.dataArray[i][2].toString();
 
             console.log(i, row);
             this.scrollView.content.addChild(row);
