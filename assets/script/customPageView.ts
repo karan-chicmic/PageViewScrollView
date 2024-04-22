@@ -43,9 +43,7 @@ export class customPageView extends Component {
 
     currSNo = 0;
 
-    protected onLoad(): void {
-        this.generateData();
-    }
+    protected onLoad(): void {}
 
     onClick() {
         if (this.generate) {
@@ -53,6 +51,12 @@ export class customPageView extends Component {
             this.generateData();
         } else {
             console.log("please reach the end of the scroll");
+        }
+        if (this.scrollView.content.children.length > 30) {
+            for (let i = 0; i < 10; i++) {
+                this.scrollView.content.removeChild(this.scrollView.content.children[i]);
+                // console.log(this.scrollView.content.children[i]);
+            }
         }
     }
 
@@ -72,6 +76,7 @@ export class customPageView extends Component {
     }
 
     start() {
+        this.generateData();
         this.scrollView.node.on(
             "scroll-to-bottom",
             () => {
