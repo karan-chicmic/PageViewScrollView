@@ -46,18 +46,15 @@ export class getCardComponent extends Component {
     generateData(sNo: string, name: string, score: string) {
         this.sNolabel.string = sNo;
 
+        // this.imageSprite.getComponent(Sprite).spriteFrame =
+        //     this.personArray[randomRangeInt(0, this.personArray.length)];
+
         this.imageSprite.getComponent(Sprite).spriteFrame =
             this.personArray[randomRangeInt(0, this.personArray.length)];
+        console.log(this.imageSprite.getComponent(Sprite).spriteFrame);
+
         this.namelabel.string = name;
         this.score.string = score;
         this.star.getComponent(Sprite).spriteFrame = this.starArray[randomRangeInt(0, this.starArray.length)];
-        // console.log("sprite Frame", this.imageSprite.getComponent(Sprite).spriteFrame);
     }
-
-    // generateStars(stars: number) {
-    //     for (let i = 0; i < stars; i++) {
-    //         const star = instantiate(this.starPrefab);
-    //         this.node.getChildByName("star").addChild(star);
-    //     }
-    // }
 }
