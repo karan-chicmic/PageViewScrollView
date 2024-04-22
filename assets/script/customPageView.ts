@@ -79,10 +79,11 @@ export class customPageView extends Component {
         this.generateData();
         this.scrollView.node.on(
             "scroll-to-bottom",
-            () => {
-                // console.log("end of the scroll");
-                this.generate = true;
-            },
+            // () => {
+            //     // console.log("end of the scroll");
+            //     this.generate = true;
+            // },
+            () => this.generateData(),
             this
         );
     }
