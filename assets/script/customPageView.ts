@@ -7,6 +7,7 @@ import {
     Prefab,
     randomRangeInt,
     ScrollView,
+    ScrollViewComponent,
     UITransform,
     Vec3,
 } from "cc";
@@ -43,19 +44,28 @@ export class customPageView extends Component {
 
     generate = true;
 
+    currSNo = 0;
+
     protected onLoad(): void {
-        this.generateData(this.generate);
+        this.generateData();
     }
 
     onClick() {
-        this.generate = true;
-        this.generateData(this.generate);
+        if (this.generate) {
+            this.generate = false;
+            this.generateData();
+        } else {
+            console.log("please reach the end of the scroll");
+        }
     }
-    generateData(generate: boolean) {
-        generate = false;
-        for (let i = 0; i < 15; i++) {
+
+    generateData() {
+        this.generate = false;
+        for (let i = 0; i < 10; i++) {
+            this.currSNo = this.currSNo + 1;
             const row = instantiate(this.rowPrefab);
             row.getComponent(getCardComponent).generateData(
+                this.currSNo.toString(),
                 this.dataArray[i][0].toString(),
                 this.dataArray[i][1].toString()
             );
@@ -64,7 +74,16 @@ export class customPageView extends Component {
         }
     }
 
-    start() {}
+    start() {
+        this.scrollView.node.on(
+            "scroll-to-bottom",
+            () => {
+                // console.log("end of the scroll");
+                this.generate = true;
+            },
+            this
+        );
+    }
 
     update(deltaTime: number) {}
 }

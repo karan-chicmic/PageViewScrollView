@@ -25,26 +25,33 @@ export class getCardComponent extends Component {
     namelabel: Label = null;
 
     @property({ type: Label })
+    sNolabel: Label = null;
+
+    @property({ type: Label })
     score: Label = null;
 
-    @property({ type: Prefab })
-    starPrefab: Prefab;
+    currSNo = 0;
+
+    // @property({ type: Prefab })
+    // starPrefab: Prefab;
     start() {}
 
     update(deltaTime: number) {}
 
-    generateData(name: string, score: string) {
+    generateData(sNo: string, name: string, score: string) {
+        this.sNolabel.string = sNo;
+
         this.imageSprite.getComponent(Sprite).spriteFrame =
             this.personArray[randomRangeInt(0, this.personArray.length)];
         this.namelabel.string = name;
         this.score.string = score;
-        console.log("sprite Frame", this.imageSprite.getComponent(Sprite).spriteFrame);
+        // console.log("sprite Frame", this.imageSprite.getComponent(Sprite).spriteFrame);
     }
 
-    generateStars(stars: number) {
-        for (let i = 0; i < stars; i++) {
-            const star = instantiate(this.starPrefab);
-            this.node.getChildByName("star").addChild(star);
-        }
-    }
+    // generateStars(stars: number) {
+    //     for (let i = 0; i < stars; i++) {
+    //         const star = instantiate(this.starPrefab);
+    //         this.node.getChildByName("star").addChild(star);
+    //     }
+    // }
 }
