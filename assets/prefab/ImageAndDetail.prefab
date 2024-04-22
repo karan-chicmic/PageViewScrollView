@@ -158,7 +158,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -244.5537109375,
+      "x": -274.5537109375,
       "y": 0,
       "z": 0
     },
@@ -317,7 +317,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -92.265625,
+      "x": -122.265625,
       "y": 0,
       "z": 0
     },
@@ -450,7 +450,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 85.0419921875,
+      "x": 55.0419921875,
       "y": 0,
       "z": 0
     },
@@ -609,7 +609,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 210.095703125,
+      "x": 180.095703125,
       "y": 0,
       "z": 0
     },
@@ -809,8 +809,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40,
-      "height": 36
+      "width": 100,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -892,7 +892,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 644.68359375,
+      "width": 704.68359375,
       "height": 100
     },
     "_anchorPoint": {
@@ -953,6 +953,8 @@
       "__id__": 0
     },
     "fileId": "d8u6e8yt5BPY/D0bPCDj16",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -1275,6 +1277,28 @@
         "__expectedType__": "cc.SpriteFrame"
       }
     ],
+    "starArray": [
+      {
+        "__uuid__": "065b1af3-076b-4056-9609-32ed2cfde066@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "49cac8ea-f410-4ac4-99b9-091d3cac4dc4@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "29f93773-e42e-474d-b1d6-40767bc66211@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "72e9b6d1-1bf6-483c-a458-6ec4647c5459@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "f57b41fa-8e2f-418b-a20d-575db8f1f0f8@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      }
+    ],
     "imageSprite": {
       "__id__": 9
     },
@@ -1286,6 +1310,9 @@
     },
     "score": {
       "__id__": 24
+    },
+    "star": {
+      "__id__": 27
     },
     "_id": ""
   },

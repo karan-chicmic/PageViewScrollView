@@ -39,9 +39,6 @@ export class customPageView extends Component {
     @property({ type: Prefab })
     rowPrefab: Prefab = null;
 
-    @property({ type: Prefab })
-    starPrefab: Prefab = null;
-
     generate = true;
 
     currSNo = 0;

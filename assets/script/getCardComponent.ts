@@ -18,6 +18,9 @@ export class getCardComponent extends Component {
     @property({ type: [SpriteFrame] })
     personArray: [SpriteFrame] | [] = [];
 
+    @property({ type: [SpriteFrame] })
+    starArray: [SpriteFrame] | [] = [];
+
     @property({ type: Node })
     imageSprite: Node = null;
 
@@ -29,6 +32,8 @@ export class getCardComponent extends Component {
 
     @property({ type: Label })
     score: Label = null;
+    @property({ type: Node })
+    star: Node = null;
 
     currSNo = 0;
 
@@ -45,6 +50,7 @@ export class getCardComponent extends Component {
             this.personArray[randomRangeInt(0, this.personArray.length)];
         this.namelabel.string = name;
         this.score.string = score;
+        this.star.getComponent(Sprite).spriteFrame = this.starArray[randomRangeInt(0, this.starArray.length)];
         // console.log("sprite Frame", this.imageSprite.getComponent(Sprite).spriteFrame);
     }
 
