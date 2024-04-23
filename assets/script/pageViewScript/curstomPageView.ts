@@ -29,11 +29,12 @@ export class curstomPageView extends Component {
                 const labelInstance = instantiate(this.page1Prefab);
                 labelInstance.getComponent(Label).string = (k + 1).toString();
                 row.addChild(labelInstance);
+                // this.pageView.node.on(PageView.EventType.PAGE_TURNING, this.pageTurnCallback, this);
             }
-            this.pageView.node.on("page-turning", () => this.pageTurnCallback(k), this);
         }
+        this.pageTurnCallback(0);
     }
-    pageTurnCallback(currPageIndex) {
+    pageTurnCallback(currPageIndex: number) {
         this.pageView.scrollToPage(currPageIndex + 1);
     }
     update(deltaTime: number) {}
