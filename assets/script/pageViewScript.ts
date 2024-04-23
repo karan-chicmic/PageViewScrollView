@@ -19,10 +19,13 @@ export class pageViewScript extends Component {
     start() {
         for (let i = 1; i <= 60; i++) {
             const row = instantiate(this.page1Prefab);
-            row.getComponent(UITransform).width = 500;
-            row.getComponent(UITransform).height = 500;
+
             row.getComponent(Label).string = i.toString() + "                   ";
-            this.pageView.content.addChild(row);
+            row.getComponent(UITransform).height = 600;
+            this.pageView.addPage(row);
+            // this.pageView.content.addChild(row);
+
+            this.pageView.node.on("page-turning", () => console.log("page turned"), this);
             // this.pageView.setCurrentPageIndex(i - 1);
 
             // this.node.addChild(row);
