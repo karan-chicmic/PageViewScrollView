@@ -4,10 +4,10 @@ const { ccclass, property } = _decorator;
 
 @ccclass("secondCustomPageView")
 export class secondCustomPageView extends Component {
-    @property({ type: Prefab })
-    rowPrefab: Prefab = null;
-    generate = true;
-    currSNo = 0;
+    // @property({ type: Prefab })
+    // rowPrefab: Prefab = null;
+    // generate = true;
+    // currSNo = 0;
 
     dataArray = [
         ["karan ", 1000, 1, 5],
@@ -26,8 +26,8 @@ export class secondCustomPageView extends Component {
         ["saniya", 480, 14, 2],
         ["carry", 400, 15, 2],
     ];
-    @property({ type: ScrollView })
-    scrollView: ScrollView | null = null;
+    // @property({ type: ScrollView })
+    // scrollView: ScrollView | null = null;
 
     start() {}
 
@@ -47,7 +47,7 @@ export class secondCustomPageView extends Component {
             // this.currSNo = this.currSNo + 1;
             const row = instantiate(rowPrefab);
             row.getComponent(getCardComponent).generateData(
-                this.currSNo.toString(),
+                // this.currSNo.toString(),
                 this.dataArray[i][0].toString(),
                 this.dataArray[i][1].toString()
             );
@@ -57,7 +57,7 @@ export class secondCustomPageView extends Component {
     }
 
     consoleFunction() {
-        console.log("Console Function Called!!");
+        console.log("second Console Function Called!!");
     }
 
     // generateRandomData(callback){

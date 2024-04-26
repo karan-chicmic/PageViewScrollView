@@ -47,6 +47,17 @@ export class customPageView extends Component {
     protected onLoad(): void {
         this.generateData();
     }
+    start() {
+        this.scrollView.node.on(
+            ScrollView.EventType.SCROLL_TO_BOTTOM,
+
+            function () {
+                this.consoleFunction();
+            },
+            // this.getComponent(secondCustomPageView)
+            this.node.getChildByName("Button").getComponent(secondCustomPageView)
+        );
+    }
 
     onClick() {
         if (this.generate) {
@@ -88,26 +99,25 @@ export class customPageView extends Component {
     //     );
     // }
 
-    start() {
-        const second = new secondCustomPageView();
-        // this.scrollView.node.on("scroll-to-bottom", this.scrollEvent.bind(this), this);
-        this.scrollView.node.on(
-            ScrollView.EventType.SCROLL_TO_BOTTOM,
-            // this.consoleFunction,
-            function () {
-                this.consoleFunction();
-            },
-            // new secondCustomPageView()
-            second
-        );
-    }
-    // x = function () {
-    //     this.consoleFunction();
-    // };
-    scrollEvent() {
-        const obj = new secondCustomPageView();
-        obj.generateData(this.generate, this.rowPrefab, this.scrollView);
-    }
+    // start() {
+    //     const second = new secondCustomPageView();
+
+    //     this.scrollView.node.on(
+    //         ScrollView.EventType.SCROLL_TO_BOTTOM,
+
+    //         function () {
+    //             // this.consoleFunction();
+    //             this.node.getComponent(secondCustomPageView).consoleFunction();
+    //         },
+
+    //         second
+    //     );
+    // }
+
+    // scrollEvent() {
+    //     const obj = new secondCustomPageView();
+    //     obj.generateData(this.generate, this.rowPrefab, this.scrollView);
+    // }
     // }
 
     // protected start(): void {
