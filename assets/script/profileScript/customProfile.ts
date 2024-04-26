@@ -40,8 +40,7 @@ export class customProfile extends Component {
             EditBoxComponent.EventType.EDITING_DID_ENDED,
             () => {
                 const num = Number(this.editBoxTextLabel.getComponent(Label).string);
-                console.log("edit end");
-                console.log(this.editBoxTextLabel.getComponent(Label).string);
+
                 if (num > 4) {
                     console.error("Enter between range 0 to 4");
                 } else this.pageView.scrollToPage(num);

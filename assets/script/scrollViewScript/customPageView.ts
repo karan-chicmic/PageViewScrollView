@@ -12,6 +12,7 @@ import {
     Vec3,
 } from "cc";
 import { getCardComponent } from "./getCardComponent";
+import { secondCustomPageView } from "./secondCustomPageView";
 const { ccclass, property } = _decorator;
 
 @ccclass("customPageView")
@@ -71,16 +72,54 @@ export class customPageView extends Component {
         }
     }
 
+    // start() {
+    //     this.scrollView.node.on(
+    //         "scroll-to-bottom",
+    //         // secondCustomPageView.bind(this.generateData()),
+    //         () => {
+    //             this.generateData();
+    //         },
+    //         // () => {
+    //         //     new secondCustomPageView().generateData;
+    //         // },
+    //         // this
+
+    //         new secondCustomPageView()
+    //     );
+    // }
+
     start() {
+        const second = new secondCustomPageView();
+        // this.scrollView.node.on("scroll-to-bottom", this.scrollEvent.bind(this), this);
         this.scrollView.node.on(
-            "scroll-to-bottom",
-            () => {
-                // console.log("end of the scroll");
-                this.generate = true;
+            ScrollView.EventType.SCROLL_TO_BOTTOM,
+            // this.consoleFunction,
+            function () {
+                this.consoleFunction();
             },
-            this
+            // new secondCustomPageView()
+            second
         );
     }
+    // x = function () {
+    //     this.consoleFunction();
+    // };
+    scrollEvent() {
+        const obj = new secondCustomPageView();
+        obj.generateData(this.generate, this.rowPrefab, this.scrollView);
+    }
+    // }
+
+    // protected start(): void {
+    //     this.scrollView.node.on(
+    //         ScrollView.EventType.SCROLL_TO_BOTTOM,
+    //         () => {
+    //             const second = new secondCustomPageView();
+    //             second.generateData();
+    //         },
+    //         secondCustomPageView
+    //     );
+    // }
 
     update(deltaTime: number) {}
 }
